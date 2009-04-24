@@ -1,0 +1,18 @@
+<p>
+  <b>Title:</b>
+  <%=h @photo.title %>
+</p>
+
+<p>
+  <b>Photo url:</b>
+  <img src="<%= url_for_file_column("photo", "image") %>" />
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @photo.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>

@@ -1,0 +1,28 @@
+<h1>Viewer</h1>
+<table>
+  <tr>
+	<th>-</th>
+    <th>Title</th>
+    <th>Photo url</th>
+    <th>Description</th>
+  </tr>
+
+<% for photo in @photos %>
+	<div class="entry">
+  		<% @photo = photo %>
+  		<tr>
+			<td><%=h photo.id %>
+    		<td><%=h photo.title %></td>
+    		<td><%=link_to(
+					image_tag(url_for_file_column("photo","image","thumb")),
+					:controller => 'viewer',
+					:action => 'show',
+					:id => photo.id) %></td>
+    		<td><%=h photo.description %></td>
+  		</tr>
+	</div>
+<% end %>
+</table>
+
+<br />
+
